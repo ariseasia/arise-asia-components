@@ -1,5 +1,5 @@
 {
-  "name": "country-site-template",
+  "name": "arise-asia-components",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,10 +8,6 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
@@ -25,5 +21,9 @@
     "globals": "^15.9.0",
     "prettier": "^3.3.3",
     "vite": "^5.4.1"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
