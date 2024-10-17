@@ -1,3 +1,3 @@
-const Test = () => <p>Test Component</p>;
+const Test = () => <p className="font-heading bg-green-500">Test Component</p>;
 
 export default Test;
