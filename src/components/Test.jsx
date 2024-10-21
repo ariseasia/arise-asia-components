@@ -1,3 +1,10 @@
-const Test = () => <p className="font-heading bg-green-500">Test Component</p>;
+import PropTypes from "prop-types";
+
+const Test = ({ className, content }) => <p className={className}>{content}</p>;
+
+Test.propTypes = {
+  className: PropTypes.string,
+  content: PropTypes.string,
+};
 
 export default Test;
