@@ -1,10 +1,3 @@
-import Test from "./components/Test";
-
-const App = () => (
-  <>
-    <h1>Country Site Template</h1>
-    <Test />
-  </>
-);
+const App = () => <h1>Arise Asia Components</h1>;
 
 export default App;
