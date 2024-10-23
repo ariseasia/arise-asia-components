@@ -7,7 +7,6 @@ export default {
 
 export const Default = {
   args: {
-    className: "",
     linksList: [
       {
         title: "Praise Report",

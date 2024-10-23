@@ -7,7 +7,7 @@ const LinksSection = ({ className, linksList }) => {
       <div className="flex flex-col gap-y-5 gap-x-10 w-full lg:flex-row">
         {linksList.map(({ title, target }) => (
           <a
-            className="flex mx-auto py-2 px-5 rounded-lg font-heading text-center border-4 border-orange-500 shadow-md hover:bg-orange-500 hover:border-orange-500 min-w-fit"
+            className="flex py-2 px-5 mx-auto text-center rounded-lg border-4 border-orange-500 shadow-md hover:bg-orange-500 hover:border-orange-500 font-heading min-w-fit"
             href={target}
             key={title}
             rel="noreferrer noopener"
