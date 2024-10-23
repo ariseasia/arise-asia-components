@@ -7,7 +7,7 @@ export default {
 
 export const Default = {
   args: {
-    className: "mx-10 lg:mx-52 pb-20",
+    className: "",
     linksList: [
       {
         title: "Praise Report",
