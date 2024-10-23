@@ -10,12 +10,15 @@ export const Default = {
     className: "mx-10 lg:mx-52 pb-20",
     linksList: [
       {
-        text: "Praise Report",
-        link: "https://www.instagram.com/ariseindonesia",
+        title: "Praise Report",
+        target: "https://www.instagram.com/ariseindonesia",
       },
-      { text: "Instagram", link: "https://www.instagram.com/ariseindonesia" },
-      { text: "Facebook", link: "https://www.instagram.com/ariseindonesia" },
-      { text: "Youtube", link: "https://www.instagram.com/ariseindonesia" },
+      {
+        title: "Instagram",
+        target: "https://www.instagram.com/ariseindonesia",
+      },
+      { title: "Facebook", target: "https://www.instagram.com/ariseindonesia" },
+      { title: "Youtube", target: "https://www.instagram.com/ariseindonesia" },
     ],
   },
 };
