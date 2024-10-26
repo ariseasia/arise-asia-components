@@ -1,5 +1,7 @@
 import RecapSection from "../components/RecapSection";
 
+import bgPath from "../assets/recap-bg.png";
+
 export default {
   title: "Recap Section",
   component: RecapSection,
@@ -7,23 +9,23 @@ export default {
 
 export const Default = {
   args: {
-    videoLink:
+    videoSrc:
       "https://drive.google.com/file/d/19MXfja5TRSUH_1wXcsevFqXZPzKpEv7i/preview",
     statistics: [
       {
         num: 4,
-        unit: "Days",
+        quantifier: "Days",
       },
       {
         num: 13,
-        unit: "Speakers",
+        quantifier: "Speakers",
       },
       {
         num: 588,
-        unit: "Participants",
+        quantifier: "Participants",
       },
     ],
-    bgPath: "/recap-bg.png",
+    bgSrc: bgPath,
     description: `This is the first paragraph.
     
     This is the second paragraph.
