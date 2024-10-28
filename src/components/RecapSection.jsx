@@ -33,7 +33,8 @@ const RecapSection = ({
         )}
       </div>
       <div
-        className={`bg-[url('${bgSrc}')] bg-no-repeat bg-cover p-5 w-full text-black text-sm md:text-base`}
+        className={`bg-no-repeat bg-cover p-5 w-full text-black text-sm md:text-base`}
+        style={{ backgroundImage: `url(${bgSrc})` }}
       >
         {paragraphs.map((paragraph, i) => (
           <article key={i} className="prose lg:prose-lg">
