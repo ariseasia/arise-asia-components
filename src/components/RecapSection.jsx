@@ -2,10 +2,11 @@ import PropTypes from "prop-types";
 
 const RecapSection = ({
   className,
-  videoSrc,
-  statistics,
   bgSrc,
   description,
+  quantityColor,
+  statistics,
+  videoSrc,
 }) => {
   const paragraphs = description.split("\n").filter((p) => p);
 
@@ -23,9 +24,9 @@ const RecapSection = ({
         )}
         {statistics && (
           <div className="md:mt-auto mb-3 font-heading font-bold text-lg md:text-3xl text-nowrap">
-            {statistics?.map(({ num, quantifier }) => (
+            {statistics?.map(({ quantity, quantifier }) => (
               <p key={quantifier}>
-                <span className="text-purple-400">{num}</span> {quantifier}
+                <span className={quantityColor}>{quantity}</span> {quantifier}
               </p>
             ))}
           </div>
@@ -46,15 +47,16 @@ const RecapSection = ({
 
 RecapSection.propTypes = {
   className: PropTypes.string,
-  videoSrc: PropTypes.string,
+  bgSrc: PropTypes.string,
+  description: PropTypes.string.isRequired,
+  quantityColor: PropTypes.string.isRequired,
   statistics: PropTypes.arrayOf(
     PropTypes.shape({
       num: PropTypes.number.isRequired,
       item: PropTypes.string.isRequired,
     }),
   ),
-  bgSrc: PropTypes.string,
-  description: PropTypes.string.isRequired,
+  videoSrc: PropTypes.string,
 };
 
 export default RecapSection;
