@@ -10,7 +10,7 @@ const SummaryBox = ({
   return (
     <div className={className}>
       <div
-        className={`${bgColor} ${textColor} flex flex-col justify-center items-center py-5 px-2 rounded-lg text-center`}
+        className={`${bgColor} ${textColor} flex flex-col justify-center items-center py-5 px-2 rounded-lg text-center h-full`}
       >
         <p className="text-3xl font-bold md:text-4xl font-heading">
           {quantity}
