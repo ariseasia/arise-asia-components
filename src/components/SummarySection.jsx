@@ -39,7 +39,7 @@ SummarySection.propTypes = {
     PropTypes.shape({
       className: PropTypes.string,
       description: PropTypes.string,
-      quantity: PropTypes.number,
+      quantity: PropTypes.string,
       quantifier: PropTypes.string,
       bgColor: PropTypes.string.isRequired,
       textColor: PropTypes.string.isRequired,
