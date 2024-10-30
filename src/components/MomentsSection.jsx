@@ -84,16 +84,16 @@ const MomentsSection = ({ className, bgColor, textColor, moments }) => {
 
 MomentsSection.propTypes = {
   className: PropTypes.string,
-  bgColor: PropTypes.string,
-  textColor: PropTypes.string,
+  bgColor: PropTypes.string.isRequired,
+  textColor: PropTypes.string.isRequired,
   moments: PropTypes.arrayOf(
     PropTypes.shape({
-      day: PropTypes.string,
-      title: PropTypes.string,
-      image: PropTypes.string,
-      description: PropTypes.string,
+      day: PropTypes.strin.isRequired,
+      title: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
     }),
-  ),
+  ).isRequired,
 };
 
 export default MomentsSection;
