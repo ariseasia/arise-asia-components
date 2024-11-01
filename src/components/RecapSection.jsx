@@ -1,46 +1,47 @@
 import PropTypes from "prop-types";
+import ReactMarkdown from "react-markdown";
 
 const RecapSection = ({
   className,
-  bgSrc,
-  description,
+  backgroundColor,
+  overlaySrc,
   quantityColor,
   statistics,
   videoSrc,
+  description,
 }) => {
-  const paragraphs = description.split("\n").filter((p) => p);
-
   return (
     <div className={className}>
       <h2 className="pb-10 uppercase text-h3">The Recap</h2>
-      <div className="flex flex-col md:flex-row md:space-x-3">
-        {videoSrc && (
-          <iframe
-            allowFullScreen
-            className="mb-4 w-full rounded-xl aspect-video"
-            src={videoSrc}
-            title="Video recap"
-          />
-        )}
+      <div className="flex flex-col gap-4 justify-center items-center mb-4 lg:flex-row-reverse lg:items-end">
         {statistics && (
-          <div className="md:mt-auto mb-3 font-heading font-bold text-lg md:text-3xl text-nowrap">
-            {statistics?.map(({ quantity, quantifier }) => (
+          <div className="text-h4">
+            {statistics.map(({ quantity, quantifier }) => (
               <p key={quantifier}>
                 <span className={quantityColor}>{quantity}</span> {quantifier}
               </p>
             ))}
           </div>
         )}
+        {videoSrc && (
+          <iframe
+            allowFullScreen
+            className="w-full max-w-lg rounded-xl aspect-video"
+            src={videoSrc}
+            title="Video recap"
+          />
+        )}
       </div>
       <div
-        className={`bg-no-repeat bg-cover p-5 w-full text-black text-sm md:text-base`}
-        style={{ backgroundImage: `url(${bgSrc})` }}
+        className={`relative py-6 px-10 mx-auto sm:py-8 sm:px-12 w-fit [clip-path:polygon(0_0,_0_92%,_13%_100%,_100%_100%,_100%_0)] sm:[clip-path:polygon(0_0,_0_90%,_10%_100%,_100%_100%,_100%_0)] ${backgroundColor}`}
       >
-        {paragraphs.map((paragraph, i) => (
-          <article key={i} className="prose lg:prose-lg">
-            <p>{paragraph}</p>
-          </article>
-        ))}
+        <div
+          className="absolute inset-0 bg-repeat opacity-5 -z-10"
+          style={overlaySrc && { backgroundImage: `url(${overlaySrc})` }}
+        />
+        <div className="prose-sm prose sm:prose-base">
+          <ReactMarkdown>{description}</ReactMarkdown>
+        </div>
       </div>
     </div>
   );
@@ -48,16 +49,17 @@ const RecapSection = ({
 
 RecapSection.propTypes = {
   className: PropTypes.string,
-  bgSrc: PropTypes.string,
-  description: PropTypes.string.isRequired,
-  quantityColor: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  overlaySrc: PropTypes.string,
+  quantityColor: PropTypes.string,
   statistics: PropTypes.arrayOf(
     PropTypes.shape({
-      num: PropTypes.number.isRequired,
-      item: PropTypes.string.isRequired,
+      quantity: PropTypes.string.isRequired,
+      quantifier: PropTypes.string.isRequired,
     }),
   ),
   videoSrc: PropTypes.string,
+  description: PropTypes.string.isRequired,
 };
 
 export default RecapSection;
