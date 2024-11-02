@@ -38,7 +38,7 @@ export const Default = {
   },
 };
 
-export const has123Go = {
+export const Has123Go = {
   args: {
     gridClassName: "lg:grid-rows-2 lg:grid-flow-col gap-4",
     bgColor: "bg-blue-600",

@@ -18,16 +18,14 @@ const SummarySection = ({
       <div className={`grid ${gridClassName}`}>
         {has123Go && (
           <Go123Box
-            className={className}
             description={goDescription}
             bgColor={goBgColor}
             textColor={goTextColor}
           />
         )}
-        {summaryList.map(({ className, quantity, quantifier }) => (
+        {summaryList.map(({ quantity, quantifier }) => (
           <SummaryBox
             key={quantifier}
-            className={className}
             quantity={quantity}
             quantifier={quantifier}
             bgColor={bgColor}
