@@ -8,48 +8,44 @@ export default {
 export const Default = {
   args: {
     gridClassName: "lg:grid-rows-2 lg:grid-flow-col gap-4",
+    bgColor: "bg-pink-600",
     summaryList: [
       {
         quantity: "13",
         quantifier: "countries",
-        bgColor: "bg-pink-600",
-        textColor: "text-white",
       },
       {
         quantity: "20+",
         quantifier: "churches",
-        bgColor: "bg-pink-600",
-        textColor: "text-white",
       },
       {
         quantity: "4",
         quantifier: "speakers",
-        bgColor: "bg-pink-600",
-        textColor: "text-white",
       },
       {
         quantity: "50+",
         quantifier: "cities",
-        bgColor: "bg-pink-600",
-        textColor: "text-white",
       },
       {
         quantity: "17",
         quantifier: "schools",
-        bgColor: "bg-pink-600",
-        textColor: "text-white",
       },
       {
         quantity: "3",
         quantifier: "workshops",
-        bgColor: "bg-pink-600",
-        textColor: "text-white",
       },
-      {
-        description: "Responding to",
-        bgColor: "bg-blue-200",
-        textColor: "text-black",
-      },
+    ],
+  },
+};
+
+export const has123Go = {
+  args: {
+    gridClassName: "lg:grid-rows-2 lg:grid-flow-col gap-4",
+    bgColor: "bg-blue-600",
+    has123Go: true,
+    goBgColor: "bg-blue-200",
+    goDescription: "Responding to",
+    summaryList: [
       {
         quantity: "184",
         quantifier: "committed to praying",
