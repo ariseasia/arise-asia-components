@@ -5,27 +5,34 @@ import SummaryBox from "./SummaryBox";
 const SummarySection = ({ className, gridClassName, summaryList }) => {
   return (
     <div className={className}>
-      <h2 className="pb-10 uppercase text-h3">The Summary</h2>
       <div className={`grid ${gridClassName}`}>
-        {summaryList.map((item, i) =>
-          Object.prototype.hasOwnProperty.call(item, "quantity") ? (
-            <SummaryBox
-              key={i}
-              className={item.className}
-              quantity={item.quantity}
-              quantifier={item.quantifier}
-              bgColor={item.bgColor}
-              textColor={item.textColor}
-            />
-          ) : (
-            <Go123Box
-              key={i}
-              className={item.className}
-              description={item.description}
-              bgColor={item.bgColor}
-              textColor={item.textColor}
-            />
-          ),
+        {summaryList.map(
+          ({
+            className,
+            quantity,
+            quantifier,
+            description,
+            bgColor,
+            textColor,
+          }) =>
+            quantity && quantity != null ? (
+              <SummaryBox
+                key={quantifier}
+                className={className}
+                quantity={quantity}
+                quantifier={quantifier}
+                bgColor={bgColor}
+                textColor={textColor}
+              />
+            ) : (
+              <Go123Box
+                key={quantifier}
+                className={className}
+                description={description}
+                bgColor={bgColor}
+                textColor={textColor}
+              />
+            ),
         )}
       </div>
     </div>
