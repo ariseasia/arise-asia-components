@@ -9,7 +9,6 @@ export const Default = {
   args: {
     bgColor: "bg-purple-500",
     hoverBgColor: "hover:bg-purple-700",
-    textColor: "text-white",
     moments: [
       {
         day: "Day 1",
