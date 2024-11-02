@@ -2,8 +2,15 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { IoIosArrowDropdown, IoIosArrowDropup } from "react-icons/io";
 
-const MomentsSection = ({ className, bgColor, textColor, moments }) => {
+const MomentsSection = ({
+  className,
+  bgColor,
+  hoverBgColor,
+  textColor,
+  moments,
+}) => {
   const numItems = moments.length;
+  hoverBgColor = `hover:${hoverBgColor}`;
 
   const [activeIdx, setActiveIdx] = useState(0);
 
@@ -17,7 +24,7 @@ const MomentsSection = ({ className, bgColor, textColor, moments }) => {
         <div className="hidden gap-y-4 items-center lg:flex lg:flex-col">
           <div className="relative">
             <IoIosArrowDropup
-              className={`absolute top-0 inset-x-1/2 ${textColor} ${bgColor} rounded-full -translate-x-1/2 -translate-y-1/2 hover:bg-purple-700 drop-shadow-2xl`}
+              className={`absolute top-0 inset-x-1/2 ${textColor} ${bgColor} rounded-full -translate-x-1/2 -translate-y-1/2 ${hoverBgColor} drop-shadow-2xl`}
               onClick={handleUp}
               size={48}
             />
@@ -39,7 +46,7 @@ const MomentsSection = ({ className, bgColor, textColor, moments }) => {
               src={moments[(activeIdx + 1) % numItems].image}
             />
             <IoIosArrowDropdown
-              className={`absolute bottom-0 inset-x-1/2 ${textColor} ${bgColor} rounded-full -translate-x-1/2 translate-y-1/2 hover:bg-purple-700 drop-shadow-2xl`}
+              className={`absolute bottom-0 inset-x-1/2 ${textColor} ${bgColor} rounded-full -translate-x-1/2 translate-y-1/2 ${hoverBgColor} drop-shadow-2xl`}
               onClick={handleDown}
               size={48}
             />
@@ -48,7 +55,7 @@ const MomentsSection = ({ className, bgColor, textColor, moments }) => {
         <div className="flex flex-col gap-y-8 items-center mt-2 max-w-screen-lg lg:mt-0 lg:w-3/4">
           <div className="relative">
             <IoIosArrowDropup
-              className={`absolute top-0 inset-x-1/2 ${textColor} ${bgColor} rounded-full -translate-x-1/2 -translate-y-1/2 lg:hidden hover:bg-purple-700 drop-shadow-2xl`}
+              className={`absolute top-0 inset-x-1/2 ${textColor} ${bgColor} rounded-full -translate-x-1/2 -translate-y-1/2 lg:hidden ${hoverBgColor} drop-shadow-2xl`}
               onClick={handleUp}
               size={36}
             />
@@ -58,7 +65,7 @@ const MomentsSection = ({ className, bgColor, textColor, moments }) => {
               src={moments[activeIdx].image}
             />
             <IoIosArrowDropdown
-              className={`absolute bottom-0 inset-x-1/2 ${textColor} ${bgColor} rounded-full -translate-x-1/2 translate-y-1/2 lg:hidden hover:bg-purple-700 drop-shadow-2xl`}
+              className={`absolute bottom-0 inset-x-1/2 ${textColor} ${bgColor} rounded-full -translate-x-1/2 translate-y-1/2 lg:hidden ${hoverBgColor} drop-shadow-2xl`}
               onClick={handleDown}
               size={36}
             />
@@ -71,7 +78,7 @@ const MomentsSection = ({ className, bgColor, textColor, moments }) => {
               <h4 className="mb-1 font-bold leading-tight sm:mb-2 sm:text-2xl">
                 {moments[activeIdx].title}
               </h4>
-              <p className="${textColor} text-p">
+              <p className={`${textColor} text-p`}>
                 {moments[activeIdx].description}
               </p>
             </article>
@@ -85,10 +92,11 @@ const MomentsSection = ({ className, bgColor, textColor, moments }) => {
 MomentsSection.propTypes = {
   className: PropTypes.string,
   bgColor: PropTypes.string.isRequired,
+  hoverBgColor: PropTypes.string.isRequired,
   textColor: PropTypes.string.isRequired,
   moments: PropTypes.arrayOf(
     PropTypes.shape({
-      day: PropTypes.strin.isRequired,
+      day: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,

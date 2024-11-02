@@ -8,6 +8,7 @@ export default {
 export const Default = {
   args: {
     bgColor: "bg-purple-500",
+    hoverBgColor: "bg-purple-700",
     textColor: "text-white",
     moments: [
       {
