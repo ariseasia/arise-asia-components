@@ -6,11 +6,10 @@ const MomentsSection = ({
   className,
   bgColor,
   hoverBgColor,
-  textColor,
+  textColor = "text-white",
   moments,
 }) => {
   const numItems = moments.length;
-  hoverBgColor = `hover:${hoverBgColor}`;
 
   const [activeIdx, setActiveIdx] = useState(0);
 
@@ -93,7 +92,7 @@ MomentsSection.propTypes = {
   className: PropTypes.string,
   bgColor: PropTypes.string.isRequired,
   hoverBgColor: PropTypes.string.isRequired,
-  textColor: PropTypes.string.isRequired,
+  textColor: PropTypes.string,
   moments: PropTypes.arrayOf(
     PropTypes.shape({
       day: PropTypes.string.isRequired,
