@@ -31,3 +31,5 @@
 .text-p {
   @apply mb-0.5 text-sm sm:mb-1 sm:text-base;
 }
+
+@plugin "@tailwindcss/typography";
