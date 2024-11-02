@@ -49,20 +49,14 @@ export const Has123Go = {
       {
         quantity: "184",
         quantifier: "committed to praying",
-        bgColor: "bg-blue-500",
-        textColor: "text-white",
       },
       {
         quantity: "42",
         quantifier: "commissioned to go",
-        bgColor: "bg-blue-500",
-        textColor: "text-white",
       },
       {
         quantity: "120+",
         quantifier: "convicted to invest",
-        bgColor: "bg-blue-500",
-        textColor: "text-white",
       },
     ],
   },

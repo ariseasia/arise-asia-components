@@ -1,6 +1,59 @@
 import PropTypes from "prop-types";
-import Go123Box from "./Go123Box";
-import SummaryBox from "./SummaryBox";
+import logoPath from "../assets/respond-123go.svg";
+
+const Go123Box = ({
+  className,
+  description,
+  bgColor,
+  textColor = "text-black",
+}) => {
+  return (
+    <div className={className}>
+      <div
+        className={`${bgColor} flex flex-col justify-center items-center py-5 px-2 rounded-lg text-center h-full`}
+      >
+        <p className={`text-center text-p ${textColor}`}>{description}</p>
+        <img src={logoPath} alt="Arise Asia response logo" className="w-36" />
+      </div>
+    </div>
+  );
+};
+
+Go123Box.propTypes = {
+  className: PropTypes.string,
+  description: PropTypes.string,
+  bgColor: PropTypes.string.isRequired,
+  textColor: PropTypes.string,
+};
+
+const SummaryBox = ({
+  className,
+  quantity,
+  quantifier,
+  bgColor,
+  textColor = "text-white",
+}) => {
+  return (
+    <div className={className}>
+      <div
+        className={`${bgColor} ${textColor} flex flex-col justify-center items-center py-5 px-2 rounded-lg text-center w-full h-full`}
+      >
+        <p className="text-3xl font-bold md:text-4xl font-heading">
+          {quantity}
+        </p>
+        <p className="text-sm md:text-base">{quantifier}</p>
+      </div>
+    </div>
+  );
+};
+
+SummaryBox.propTypes = {
+  className: PropTypes.string,
+  quantity: PropTypes.string.isRequired,
+  quantifier: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
+  textColor: PropTypes.string,
+};
 
 const SummarySection = ({
   className,
@@ -48,9 +101,8 @@ SummarySection.propTypes = {
   goDescription: PropTypes.string,
   summaryList: PropTypes.arrayOf(
     PropTypes.shape({
-      className: PropTypes.string,
-      quantity: PropTypes.string,
-      quantifier: PropTypes.string,
+      quantity: PropTypes.string.isRequired,
+      quantifier: PropTypes.string.isRequired,
     }),
   ).isRequired,
 };
