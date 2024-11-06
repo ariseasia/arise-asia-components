@@ -29,19 +29,19 @@ const MomentsSection = ({
             />
             <img
               alt={moments[(activeIdx - 1 + numItems) % numItems].title}
-              className="w-72 rounded-3xl aspect-video"
+              className="w-72 rounded-3xl aspect-video object-cover"
               src={moments[(activeIdx - 1 + numItems) % numItems].image}
             />
           </div>
           <img
             alt={moments[activeIdx].title}
-            className="w-96 rounded-3xl aspect-video"
+            className="w-96 rounded-3xl aspect-video object-cover"
             src={moments[activeIdx].image}
           />
           <div className="relative">
             <img
               alt={moments[(activeIdx + 1) % numItems].title}
-              className="w-72 rounded-3xl aspect-video"
+              className="w-72 rounded-3xl aspect-video object-cover"
               src={moments[(activeIdx + 1) % numItems].image}
             />
             <IoIosArrowDropdown
@@ -60,7 +60,7 @@ const MomentsSection = ({
             />
             <img
               alt={moments[activeIdx].title}
-              className="w-full max-w-screen-lg rounded-3xl aspect-video"
+              className="w-full max-w-screen-lg rounded-3xl aspect-video object-cover"
               src={moments[activeIdx].image}
             />
             <IoIosArrowDropdown
