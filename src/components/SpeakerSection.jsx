@@ -40,7 +40,11 @@ const SpeakerSection = ({
         <div className="flex gap-x-10 mt-10 sm:-mr-10 justify-center lg:mr-10">
           {displayedSpeakers.map((item, i) => (
             <div key={i} className="flex flex-col w-1/2 xl:w-1/4 items-center">
-              <img src={item.image} alt={item.name} />
+              <img
+                src={item.image}
+                alt={item.name}
+                className="aspect-square object-cover rounded-lg"
+              />
               <p
                 className={`text-center text-sm md:text-lg font-heading font-bold ${nameTextColor}`}
               >
