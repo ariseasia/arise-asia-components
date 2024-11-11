@@ -31,7 +31,7 @@ const SpeakerSection = ({
 
   return (
     <div id="speakers" className={className}>
-      <h3 className="text-2xl uppercase font-bold font-heading pb-10">
+      <h3 className="text-3xl uppercase font-bold font-heading pb-10">
         Our Speakers
       </h3>
 
