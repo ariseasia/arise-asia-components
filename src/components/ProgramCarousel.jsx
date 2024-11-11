@@ -67,9 +67,9 @@ const ProgramCarousel = ({
             {programData[currentIndex].schedule.map((item, j) => (
               <div
                 key={j}
-                className={`border-2 ${borderColor} rounded-md font-heading text-[10px] lg:text-sm p-2 flex flex-row space-x-2 justify-between`}
+                className={`border-2 ${borderColor} rounded-md font-heading text-[10px] lg:text-sm p-2 flex flex-row space-x-2 justify-between w-96 lg:min-w-md lg:max-w-md`}
               >
-                <div>{item.activity}</div>
+                <p>{item.activity}</p>
                 <div className="text-nowrap">
                   {item.startTime} {item.endTime && `- ${item.endTime}`}
                 </div>
