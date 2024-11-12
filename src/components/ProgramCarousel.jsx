@@ -45,8 +45,13 @@ const ProgramCarousel = ({
             )}
 
             <div className="font-heading font-bold text-sm lg:text-lg text-center pb-5">
-              DAY {programData[currentIndex].day} -{" "}
-              {programData[currentIndex].date}
+              <p>
+                DAY {programData[currentIndex].day} -{" "}
+                {programData[currentIndex].date}
+              </p>
+              {programData[currentIndex].topic && (
+                <p>{programData[currentIndex].topic}</p>
+              )}
             </div>
 
             {currentIndex < programData.length - 1 ? (
