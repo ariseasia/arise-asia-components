@@ -1,6 +1,7 @@
 export { default as Footer } from "./Footer";
 export { default as HeroSection } from "./HeroSection";
 export { default as LinksSection } from "./LinksSection";
+export { default as MomentsCarousel } from "./MomentsCarousel";
 export { default as MomentsSection } from "./MomentsSection";
 export { default as Navbar } from "./Navbar";
 export { default as ProgramCarousel } from "./ProgramCarousel";
