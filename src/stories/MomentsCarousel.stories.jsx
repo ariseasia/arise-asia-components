@@ -9,7 +9,7 @@ export const Default = {
   args: {
     bgColor: "bg-purple-500",
     hoverBgColor: "hover:bg-purple-700",
-    moments: [
+    momentsData: [
       {
         day: "Day 1",
         title: "Fellowship Night",
@@ -50,7 +50,7 @@ export const NoDay = {
   args: {
     bgColor: "bg-purple-500",
     hoverBgColor: "hover:bg-purple-700",
-    moments: [
+    momentsData: [
       {
         title: "Fellowship Night",
         description:
@@ -87,7 +87,7 @@ export const NoDescription = {
   args: {
     bgColor: "bg-purple-500",
     hoverBgColor: "hover:bg-purple-700",
-    moments: [
+    momentsData: [
       {
         day: "Day 1",
         title: "Fellowship Night",
@@ -120,7 +120,7 @@ export const NoDayAndDescription = {
   args: {
     bgColor: "bg-purple-500",
     hoverBgColor: "hover:bg-purple-700",
-    moments: [
+    momentsData: [
       {
         title: "Fellowship Night",
         image:
