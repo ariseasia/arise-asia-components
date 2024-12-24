@@ -7,10 +7,10 @@ const MomentsCarousel = ({
   bgColor,
   hoverBgColor,
   textColor = "text-white",
-  moments,
+  momentsData,
 }) => {
   const [activeIdx, setActiveIdx] = useState(0);
-  const len = moments.length;
+  const len = momentsData.length;
 
   const handleLeft = () => setActiveIdx((activeIdx + 1) % len);
 
@@ -26,9 +26,9 @@ const MomentsCarousel = ({
         />
         <div className="py-5">
           <img
-            alt={moments[activeIdx].title}
+            alt={momentsData[activeIdx].title}
             className="object-cover m-auto w-full h-full rounded-xl aspect-video"
-            src={moments[activeIdx].image}
+            src={momentsData[activeIdx].image}
           />
         </div>
         <IoIosArrowDropright
@@ -41,12 +41,12 @@ const MomentsCarousel = ({
         <article
           className={`py-4 pr-16 pl-5 ${textColor} ${bgColor} rounded-xl sm:py-6 sm:pl-8 [clip-path:polygon(0_0,_0_100%,_80%_100%,_100%_75%,_100%_0)]`}
         >
-          <p className="italic text-p">{moments[activeIdx].day}</p>
+          <p className="italic text-p">{momentsData[activeIdx].day}</p>
           <h4 className="mb-1 font-bold leading-tight sm:mb-2 sm:text-2xl">
-            {moments[activeIdx].title}
+            {momentsData[activeIdx].title}
           </h4>
           <p className={`${textColor} text-p`}>
-            {moments[activeIdx].description}
+            {momentsData[activeIdx].description}
           </p>
         </article>
       </div>
@@ -59,7 +59,7 @@ MomentsCarousel.propTypes = {
   bgColor: PropTypes.string.isRequired,
   hoverBgColor: PropTypes.string.isRequired,
   textColor: PropTypes.string,
-  moments: PropTypes.arrayOf(
+  momentsData: PropTypes.arrayOf(
     PropTypes.shape({
       day: PropTypes.string,
       title: PropTypes.string.isRequired,
