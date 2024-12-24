@@ -24,11 +24,13 @@ const MomentsCarousel = ({
           onClick={handleLeft}
           size={36}
         />
-        <img
-          alt={moments[activeIdx].title}
-          className="object-cover py-5 w-full rounded-3xl aspect-video"
-          src={moments[activeIdx].image}
-        />
+        <div className="py-5">
+          <img
+            alt={moments[activeIdx].title}
+            className="object-cover m-auto w-full h-full rounded-xl aspect-video"
+            src={moments[activeIdx].image}
+          />
+        </div>
         <IoIosArrowDropright
           className={`absolute right-0 top-2/5 md:top-1/2 ${textColor} ${bgColor} rounded-full translate-x-1/2 ${hoverBgColor} drop-shadow-2xl`}
           onClick={handleRight}
