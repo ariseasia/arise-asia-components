@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 
 const MomentsCarousel = ({
@@ -15,6 +15,32 @@ const MomentsCarousel = ({
   const handleLeft = () => setActiveIdx((activeIdx + 1) % len);
 
   const handleRight = () => setActiveIdx((activeIdx - 1 + len) % len);
+
+  const descriptionRef = useRef(null);
+  const [maxHeight, setMaxHeight] = useState(0);
+
+  const calculateMaxHeight = () => {
+    const heights = momentsData.map((data) => {
+      if (!data.description) return 0;
+      const div = document.createElement("div");
+      div.style.position = "absolute";
+      div.style.visibility = "hidden";
+      div.style.height = "auto";
+      div.style.width = descriptionRef.current.offsetWidth + "px";
+      div.innerHTML = data.description;
+      document.body.appendChild(div);
+      const height = div.offsetHeight;
+      document.body.removeChild(div);
+      return height;
+    });
+    setMaxHeight(Math.max(...heights));
+  };
+
+  useEffect(() => {
+    calculateMaxHeight();
+    window.addEventListener("resize", calculateMaxHeight);
+    return () => window.removeEventListener("resize", calculateMaxHeight);
+  }, [momentsData]);
 
   return (
     <div className={className}>
@@ -45,7 +71,11 @@ const MomentsCarousel = ({
           <h4 className="mb-1 font-bold leading-tight sm:mb-2 sm:text-2xl">
             {momentsData[activeIdx].title}
           </h4>
-          <p className={`${textColor} text-p`}>
+          <p
+            ref={descriptionRef}
+            className={`${textColor} text-p`}
+            style={{ height: `${maxHeight}px` }}
+          >
             {momentsData[activeIdx].description}
           </p>
         </article>
