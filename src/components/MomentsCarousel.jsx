@@ -67,17 +67,19 @@ const MomentsCarousel = ({
         <article
           className={`py-4 pr-16 pl-5 ${textColor} ${bgColor} rounded-xl sm:py-6 sm:pl-8 [clip-path:polygon(0_0,_0_100%,_80%_100%,_100%_75%,_100%_0)]`}
         >
-          <p className="italic text-p">{momentsData[activeIdx].day}</p>
-          <h4 className="mb-1 font-bold leading-tight sm:mb-2 sm:text-2xl">
-            {momentsData[activeIdx].title}
-          </h4>
-          <p
-            ref={descriptionRef}
-            className={`${textColor} text-p`}
-            style={{ height: `${maxHeight}px` }}
-          >
-            {momentsData[activeIdx].description}
-          </p>
+          <div className="flex flex-col justify-between">
+            <p className="italic text-p">{momentsData[activeIdx].day}</p>
+            <h4 className="mb-1 font-bold leading-tight sm:mb-2 sm:text-2xl">
+              {momentsData[activeIdx].title}
+            </h4>
+            <p
+              ref={descriptionRef}
+              className={`${textColor} text-p flex items-center`}
+              style={{ height: `${maxHeight}px` }}
+            >
+              {momentsData[activeIdx].description}
+            </p>
+          </div>
         </article>
       </div>
     </div>
