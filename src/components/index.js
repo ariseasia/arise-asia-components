@@ -8,3 +8,4 @@ export { default as ProgramCarousel } from "./ProgramCarousel";
 export { default as RecapSection } from "./RecapSection";
 export { default as SpeakerSection } from "./SpeakerSection";
 export { default as SummarySection } from "./SummarySection";
+export { default as ValuesSection } from "./ValuesSection";
